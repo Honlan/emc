@@ -50,35 +50,302 @@
         </div>
         <!-- /.container-fluid -->
     </nav>
-
     <div id="content">
         <div id="intro">
             <h1>EMC杯智慧校园开放数据大赛</h1>
-            <p>这里是简介</p>
-            <p>这里是简介</p>
-            <p>这里是简介</p>
-            <p>这里是简介</p>
-            <p>这里是简介</p>
-            <p>这里是简介</p>
-            <p>这里是简介</p>
+            <p>面对社会、科研、企业对于大数据人才的紧迫需求，上海交大网络信息中心联合EMC卓越研究集团，于2015年4月共同举办“EMC杯上海交大智慧校园数据分析大赛”。</p>
+            <p>这次数据分析大赛将开放校园数据，并启动数据训练营，鼓励同学和社会人士参与到大数据的学习和实践之中。</p>
+            <p>身为茫茫人海的一枚迷途小码农，我也奋不顾身地加入了这场比赛中……</p>
         </div>
+
         <div id="summary">
-            这里是概述
+            <h3>我选择了赛题一：<span style="color:rgb(190, 71, 71);">校园餐饮消费分析</span></h3>
+            <p>分析基于<span style="color:rgb(232, 118, 118)">商户信息</span>、<span style="color:rgb(232, 118, 118)">用户信息</span>、<span style="color:rgb(232, 118, 118)">交易记录</span>、<span style="color:rgb(232, 118, 118)">气象记录</span>和<span style="color:rgb(232, 118, 118)">校园网记录</span>五个数据集。</p>
+            <ul>
+                <li><b>商户信息</b>：共134项观测，包含32个商户系统、85个子商户；</li>
+                <li><b>用户信息</b>：共30861项观测，包含30861个一卡通账户、30812个学号，即有49名学生拥有两个一卡通账户；</li>
+                <li><b>交易记录</b>：共7915289项交易记录，时间跨度为2014-09-01至2015-01-31；</li>
+                <li><b>气象记录</b>：共26660项气象记录，时间跨度为2014-08-15至2015-03-25；</li>
+                <li><b>校园网记录</b>：共12736408项校园网记录，时间跨度为2014-09-01至2015-01-31。</li>
+            </ul>
+            <div class="figure">
+                <ul class="nav nav-tabs" role="tablist">
+                    <li role="presentation" class="active"><a href="#summaryUser" role="tab" data-toggle="tab">用户分布</a>
+                    </li>
+                    <li role="presentation"><a href="#summaryMerchant" role="tab" data-toggle="tab">商户结构</a>
+                    </li>
+                    <li role="presentation"><a href="#summaryRain" role="tab" data-toggle="tab">历史降雨</a>
+                    </li>
+                    <li role="presentation"><a href="#summaryWifi" role="tab" data-toggle="tab">校园网纪录</a>
+                    </li>
+                </ul>
+                <div class="tab-content">
+                    <div role="tabpanel" class="tab-pane fade in active" id="summaryUser">
+                        <img src="imgs/plot/user.png">
+                        <p class="diagram">本硕博的比例大致为3:2:1，男女比约为2:1；本科生以95年居多，硕士生以91年居多，而博士生……苦逼啊……</p>
+                    </div>
+                    <div role="tabpanel" class="tab-pane fade" id="summaryMerchant">
+                        <img src="imgs/plot/merchant.png">
+                        <p class="diagram">32个商户系统中有部分重复，即以“新”字代表重新装修过的食堂，可以看到四餐包含的子商户即菜品种类最多。</p>
+                    </div>
+                    <div role="tabpanel" class="tab-pane fade" id="summaryRain">
+                        <img src="imgs/plot/rain.png">
+                        <p class="diagram">上海阴雨天气不少，淅淅沥沥下个不停，偶尔还会来个雷阵雨下个爽。</p>
+                    </div>
+                    <div role="tabpanel" class="tab-pane fade" id="summaryWifi">
+                        <img src="imgs/plot/wifi.png">
+                        <p class="diagram">9月份，开学咯；国庆假，回家咯；元旦节，回家咯；放寒假，过年咯～</p>
+                    </div>
+                </div>
+            </div>
         </div>
+
+        <div id="map">
+            <p>aaaa</p>
+        </div>
+
         <div id="merchant">
-            这里是商户
+            <div class="row" style="margin-bottom:30px;">
+                <h3>大家最爱去哪里</h3>
+                <div class="col-md-1 col-sm-1 col-xs-1 col-lg-1">
+                </div>
+                <div class="col-md-3 col-sm-3 col-xs-3 col-lg-3">
+                    <div class="row">
+                        <div class="col-md-6 col-sm-6 col-xs-6 col-lg-6">
+                            <h5>最贵消费(元/次)</h5>
+                            <table>
+                                <tr>
+                                    <td>吉姆丽德</td>
+                                    <td>53.04</td>
+                                </tr>
+                                <tr>
+                                    <td>中西餐厅</td>
+                                    <td>52.10</td>
+                                </tr>
+                                <tr>
+                                    <td>本科生学务收费</td>
+                                    <td>50.90</td>
+                                </tr>
+                                <tr>
+                                    <td>曦潮书店</td>
+                                    <td>31.40</td>
+                                </tr>
+                                <tr>
+                                    <td>伊诺咖啡</td>
+                                    <td>28.97</td>
+                                </tr>
+                            </table>
+                        </div>
+                        <div class="col-md-6 col-sm-6 col-xs-6 col-lg-6">
+                            <h5>业绩最佳(元)</h5>
+                            <table>
+                                <tr>
+                                    <td>三餐一楼</td>
+                                    <td>3.8e6</td>
+                                </tr>
+                                <tr>
+                                    <td>三餐二楼</td>
+                                    <td>2.7e6</td>
+                                </tr>
+                                <tr>
+                                    <td>绿园餐厅</td>
+                                    <td>2.6e6</td>
+                                </tr>
+                                <tr>
+                                    <td>上海快餐</td>
+                                    <td>2.2e6</td>
+                                </tr>
+                                <tr>
+                                    <td>川味点心</td>
+                                    <td>1.9e6</td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 col-sm-4 col-xs-4 col-lg-4">
+                    <img src="imgs/plot/tagcloud.png" style="width:90%;margin-left:5%;margin-right:5%;box-shadow: 3px 3px 6px rgba(20,20,20,0.3);border-radius: 10px;margin-top: 30px;margin-bottom:10px;">
+                </div>
+                <div class="col-md-3 col-sm-3 col-xs-3 col-lg-3">
+                    <div class="row">
+                        <div class="col-md-6 col-sm-6 col-xs-6 col-lg-6">
+                            <h5>最受欢迎(人次)</h5>
+                            <table>
+                                <tr>
+                                    <td>水控系统2</td>
+                                    <td>6.7e5</td>
+                                </tr>
+                                <tr>
+                                    <td>三餐一楼</td>
+                                    <td>6.3e5</td>
+                                </tr>
+                                <tr>
+                                    <td>上海快餐</td>
+                                    <td>4.0e5</td>
+                                </tr>
+                                <tr>
+                                    <td>川味点心</td>
+                                    <td>3.9e5</td>
+                                </tr>
+                                <tr>
+                                    <td>闵西浴室</td>
+                                    <td>3.4e5</td>
+                                </tr>
+                            </table>
+                        </div>
+                        <div class="col-md-6 col-sm-6 col-xs-6 col-lg-6">
+                            <h5>最低开销(元/次)</h5>
+                            <table>
+                                <tr>
+                                    <td>图书馆自助复印</td>
+                                    <td>0.85</td>
+                                </tr>
+                                <tr>
+                                    <td>闵东浴室</td>
+                                    <td>1.01</td>
+                                </tr>
+                                <tr>
+                                    <td>闵西浴室</td>
+                                    <td>1.03</td>
+                                </tr>
+                                <tr>
+                                    <td>水控系统2</td>
+                                    <td>1.04</td>
+                                </tr>
+                                <tr>
+                                    <td>闵北浴室</td>
+                                    <td>1.08</td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-1 col-sm-1 col-xs-1 col-lg-1">
+                </div>
+            </div>
+            <div class="figure">
+                <ul class="nav nav-tabs" role="tablist">
+                    <li role="presentation" class="active">
+                        <a href="#merchantSum" role="tab" data-toggle="tab">一卡通消费总额统计</a>
+                    </li>
+                    <li role="presentation"><a href="#merchantCount" role="tab" data-toggle="tab">一卡通消费次数统计</a>
+                    </li>
+                    <li role="presentation"><a href="#merchantMean" role="tab" data-toggle="tab">一卡通消费均值统计</a>
+                    </li>
+                </ul>
+                <div class="tab-content">
+                    <div role="tabpanel" class="tab-pane fade in active" id="merchantSum">
+                        <img src="imgs/plot/merchantSum.png">
+                        <p class="diagram">毫无疑问，吃饭花的钱是最多的，接下来就是逛超市的开销。</p>
+                    </div>
+                    <div role="tabpanel" class="tab-pane fade" id="merchantCount">
+                        <img src="imgs/plot/merchantCount.png">
+                        <p class="diagram">次数和总额大致成正比例，除了“用水”；洗澡虽然便宜，但却是人人必不可少的～</p>
+                    </div>
+                    <div role="tabpanel" class="tab-pane fade" id="merchantMean">
+                        <img src="imgs/plot/merchantMean.png">
+                        <p class="diagram">每次消费均值统计显示，最贵的是办理学生事务，其次是咖啡、活动、超市，接下来才是吃饭……</p>
+                    </div>
+                </div>
+            </div>
         </div>
+
+        <div id="merchantDetail">
+            <h3>业绩冠军：三餐一楼（闵行第三餐饮学生餐厅）</h3>
+            <p class="diagram">新闵行第三餐饮学生餐厅完成装修后于2014年9月2日重新投入营业。在观测时间范围内，营业额为3793804元，在各子商户中排名第一；消费人次达626013次，同样位于第一。</p>
+            <p class="diagram">以下给出10月28日和10月31日三餐一楼消费记录的二维密度图，分别作为无雨天气和有雨天气的食堂就餐行为示例，并结合校园网数据和气象数据进一步分析影响就餐人数的可能因素。</p>
+            <div class="row" style="margin-top: 30px;">
+                <div class="col-md-6 col-xs-6 col-sm-6 col-lg-6">
+                    <img src="imgs/plot/withRain.png">
+                </div>
+                <div class="col-md-6 col-xs-6 col-sm-6 col-lg-6">
+                    <img src="imgs/plot/withoutRain.png">
+                </div>
+            </div>
+            <p style="margin-top:30px;" class="diagram">三餐一楼每日消费总额和降雨量、每日校园网活跃人数的关系。黑色点线代表日消费总额，绿线代表每日校园网活跃人数，蓝线代表日均降雨量。可以看出，三餐一楼日消费总额呈现明显的<span style="color:rgb(232, 118, 118)">周期效应</span>：工作日就餐量增加，周末就餐量陡降，并且在<span style="color:rgb(232, 118, 118)">节假日</span>显著降低，如9月开学季、国庆节、元旦节和寒假。除此之外，紫色的回归线也暗示了在线人数的变化趋势。</p>
+            <p class="diagram">每次<span style="color:rgb(118, 137, 232)">降雨量的尖峰</span>都将导致当日消费总额的明显下降，如10月31日、11月下旬、1月13日等；<span style="color:rgb(199, 118, 232)">校园网日均活跃人数</span>和当日消费总额有着极强的正比例相关，两者增幅的波动呈现出完全一致的特征，这也是情理之中的结果。</p>
+            <img src="imgs/plot/3canDetail.png" style="width:70%;margin-left:15%;margin-right15%;margin-top:30px;box-shadow:3px 3px 6px rgba(20,20,20,0.3);border-radius:5px;">
+        </div>
+
         <div id="user">
-            这里是用户
+            <div class="row">
+                <div class="col-md-9 col-sm-9 col-xs-9 col-lg-9">
+                    <img src="imgs/plot/userSum.png">
+                </div>
+                <div class="col-md-3 col-sm-3 col-xs-3 col-lg-3">
+                    <h3>用户消费分类分析</h3>
+                    <p>在就餐、超市、活动、水果等消费分类中，男生和女生的行为习惯有何不同？本科生、硕士生和博士生的消费行为又有哪些不同？</p>
+                    <p>可以很明显地看出，女生在就餐上的开销总体大约比男生少600元，硕士和博士在就餐上的花费范围也比本科生波动要大一些。</p>
+                    <p>本科生在超市和点心上的消费比硕士和博士更多，女生在水果和咖啡上的消费也比男生要多一些。</p>
+                </div>
+            </div>
+            <div class="row" style="margin-top:60px;">
+                <div class="col-md-3 col-sm-3 col-xs-3 col-lg-3" style="padding-top:50px;">
+                    <p>从消费次数分布可以看到更明显的一些特征。男生人均比女生在食堂就餐的次数更多，女生比男生洗澡次数更多，本科生比硕士和博士生逛超市的次数更多。</p>
+                    <p>从本科到硕士到博士，学生在食堂就餐的最低次数逐渐降低，也许是因为忙于科研没时间出去吃饭，所以养成了点外卖的习惯～</p>
+                    <p>还有一个很出人意料的结论：各类用户（男和女，本硕博）中都有在就餐方面消费总额和次数均为零的情况，他们从来不在食堂吃饭！</p>
+                </div>
+                <div class="col-md-9 col-sm-9 col-xs-9 col-lg-9">
+                    <img src="imgs/plot/userCount.png" style="margin-left:10%;">
+                </div>
+            </div>
         </div>
+
+        <div id="userDetail">
+            <div class="row">
+                <div class="col-md-9 col-sm-9 col-xs-9 col-lg-9">
+                    <img src="imgs/plot/hengxiang.png">
+                </div>
+                <div class="col-md-3 col-sm-3 col-xs-3 col-lg-3">
+                    <h3>用户就餐模式分析</h3>
+                    <p>由于就餐在各项分类中占绝大部分，以下从横向和纵向两个角度进行用户就餐模式分析。</p>
+                    <p>横向模式分析包括用户的就餐均匀度，即在每个子商户就餐次数的均匀程度，和最常去的子商户。</p>
+                    <p>本科、硕士和博士最常去的食堂存在明显差异，例如在哈乐之家和淮阳快餐就餐的本科生最多；大部分用户就餐比较均匀，因为他们的就餐比较单一，在其他子商户的就餐次数皆为0；NA表示用户没有任何就餐记录，他们不吃食堂！</p>
+                </div>
+            </div>
+            <div class="row" style="margin-top:60px;">
+                <div class="col-md-3 col-sm-3 col-xs-3 col-lg-3" style="padding-top:50px;">
+                    <p>纵向模式分析包括用户的总就餐次数，以及工作日就餐比，即工作日就餐次数占总就餐次数的比例。工作日就餐比越高，则用户周末在学校就餐的概率越低。</p>
+                    <p>就餐次数最大达500多次，在153天的时间跨度里，几乎是每天都在食堂就餐三次；就餐次数最少为0，有很大一群人，他们从不在食堂就餐。</p>
+                    <p>大部分人的工作日就餐比在0.6和0.9之间，男生和女生的工作日就餐比均值分别为0.772和0.776十分接近，本科生、博士和硕士的就餐比均值分别为0.788、0.788和0.738。</p>
+                </div>
+                <div class="col-md-9 col-sm-9 col-xs-9 col-lg-9">
+                    <img src="imgs/plot/zongxiang.png" style="margin-left:10%;">
+                </div>
+            </div>
+        </div>
+
+        <div id="whoisme">
+            <h3>WHO AM I</h3>
+            <p class="diagram">利用性别、入学年份、出生年份、学位类别、最常去的食堂、就餐均匀度、总就餐次数和工作日就餐比等特征，匹配我的资料和就餐习惯，逐步缩小筛选范围并最终锁定为以下15名“嫌疑人”。</p>
+            <p class="diagram">即便只剩15个候选对象，从消费分布来看仅能排除C59334。使用Influxdb结合Grafana进行时间序列数据可视化后，最终分析并确定逆解析结果为！</p>
+            <div class="row" style="margin-top:30px;">
+                <div class="col-md-6 col-sm-6 col-xs-6 col-lg-6">
+                    <img src="imgs/plot/crimer.png">
+                </div>
+                <div class="col-md-6 col-sm-6 col-xs-6 col-lg-6">
+                    <img src="imgs/plot/crimer.png">
+                </div>
+            </div>
+        </div>
+
         <div id="about">
-            这里是关于
+            <div class="row">
+                <div class="col-md-5 col-sm-5 col-xs-5 col-lg-5">
+                    <img src="imgs/logo.png" alt="">
+                </div>
+                <div class="col-md-7 col-sm-7 col-xs-7 col-lg-7" style="text-align:left;">
+                    <h3>张宏伦</h3>
+                    <h5><span class="glyphicon glyphicon-envelope" style="margin-right:12px;"></span>zhanghonglun@sjtu.edu.cn</h5>
+                    <h5><span class="glyphicon glyphicon-user" style="margin-right:12px;"></span>上海交通大学在读博士生</h5>
+                    <p>在路上，一直前行</p>
+                </div>
+            </div>
         </div>
     </div>
-    
     <footer>
         <div class="well text-center" id="footer">
-            <h5>EMC校园开放大数据比赛</h5>
+            <h4><a href="http://www.kesci.com/">EMC校园开放大数据比赛</a></h4>
             <p>我想一个人静静，别问我静静是谁</p>
             <span>Copyright © 2014-2015</span>
             <span>SJTU Honlan</span>
