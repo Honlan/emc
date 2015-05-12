@@ -9,11 +9,15 @@
     <meta name="description" content="EMC校园开放大数据比赛">
     <script src="js/jquery.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
-    <script src="js/index.js"></script>
     <script>
-    // $(function() {
-    //     $("[data-toggle='tooltip']").tooltip();
-    // });
+    $(document).ready(function() {
+        $('ul.navbar-left a').click(function(event) {
+            event.preventDefault();
+            $('body,html').animate({
+                scrollTop: $('#' + $(this).attr('name')).offset().top - 60
+            }, 600);
+        });
+    });
     </script>
     <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="css/index.css">
@@ -34,15 +38,15 @@
             </div>
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                <ul class="nav navbar-nav">
-                    <li><a href="#intro">简介</a></li>
-                    <li><a href="#summary">概述</a></li>
-                    <li><a href="#merchant">商户</a></li>
-                    <li><a href="#user">用户</a></li>
-                    <li><a href="#about">关于</a></li>
+                <ul class="nav navbar-nav navbar-left">
+                    <li><a href="" name="intro">简介</a></li>
+                    <li><a href="" name="summary">概述</a></li>
+                    <li><a href="" name="merchant">商户</a></li>
+                    <li><a href="" name="user">用户</a></li>
+                    <li><a href="" name="about">关于</a></li>
                 </ul>
                 <ul class="nav navbar-nav navbar-right">
-                    <li><a href="">Grafana</a></li>
+                    <li><a href="http://zhanghonglun.cn/emc/grafana">Grafana</a></li>
                     <li><a href="">Echarts</a></li>
                 </ul>
             </div>
@@ -57,7 +61,6 @@
             <p>这次数据分析大赛将开放校园数据，并启动数据训练营，鼓励同学和社会人士参与到大数据的学习和实践之中。</p>
             <p>身为茫茫人海的一枚迷途小码农，我也奋不顾身地加入了这场比赛中……</p>
         </div>
-
         <div id="summary">
             <h3>我选择了赛题一：<span style="color:rgb(190, 71, 71);">校园餐饮消费分析</span></h3>
             <p>分析基于<span style="color:rgb(232, 118, 118)">商户信息</span>、<span style="color:rgb(232, 118, 118)">用户信息</span>、<span style="color:rgb(232, 118, 118)">交易记录</span>、<span style="color:rgb(232, 118, 118)">气象记录</span>和<span style="color:rgb(232, 118, 118)">校园网记录</span>五个数据集。</p>
@@ -99,11 +102,9 @@
                 </div>
             </div>
         </div>
-
         <div id="map">
             <p>aaaa</p>
         </div>
-
         <div id="merchant">
             <div class="row" style="margin-bottom:30px;">
                 <h3>大家最爱去哪里</h3>
@@ -226,11 +227,15 @@
             <div class="figure">
                 <ul class="nav nav-tabs" role="tablist">
                     <li role="presentation" class="active">
-                        <a href="#merchantSum" role="tab" data-toggle="tab">一卡通消费总额统计</a>
+                        <a href="#merchantSum" role="tab" data-toggle="tab">消费类别总额</a>
                     </li>
-                    <li role="presentation"><a href="#merchantCount" role="tab" data-toggle="tab">一卡通消费次数统计</a>
+                    <li role="presentation"><a href="#merchantCount" role="tab" data-toggle="tab">消费类别次数</a>
                     </li>
-                    <li role="presentation"><a href="#merchantMean" role="tab" data-toggle="tab">一卡通消费均值统计</a>
+                    <li role="presentation"><a href="#merchantMean" role="tab" data-toggle="tab">消费类别均值</a>
+                    </li>
+                    <li role="presentation"><a href="#merchantBoy" role="tab" data-toggle="tab">男生消费总额</a>
+                    </li>
+                    <li role="presentation"><a href="#merchantGirl" role="tab" data-toggle="tab">女生消费总额</a>
                     </li>
                 </ul>
                 <div class="tab-content">
@@ -246,10 +251,17 @@
                         <img src="imgs/plot/merchantMean.png">
                         <p class="diagram">每次消费均值统计显示，最贵的是办理学生事务，其次是咖啡、活动、超市，接下来才是吃饭……</p>
                     </div>
+                    <div role="tabpanel" class="tab-pane fade" id="merchantBoy">
+                        <img src="imgs/plot/boy.png">
+                        <p class="diagram">对于男生而言，三餐一楼和二楼是吃饭最大众的选择；哈乐之家的顾客大多是本科生，而六餐一楼则主要是硕士生和博士生。</p>
+                    </div>
+                    <div role="tabpanel" class="tab-pane fade" id="merchantGirl">
+                        <img src="imgs/plot/girl.png">
+                        <p class="diagram">女生和男生在各个子商户的选择上有着类似，但是相对于饭菜而言，女生更喜欢点心和超市。</p>
+                    </div>
                 </div>
             </div>
         </div>
-
         <div id="merchantDetail">
             <h3>业绩冠军：三餐一楼（闵行第三餐饮学生餐厅）</h3>
             <p class="diagram">新闵行第三餐饮学生餐厅完成装修后于2014年9月2日重新投入营业。在观测时间范围内，营业额为3793804元，在各子商户中排名第一；消费人次达626013次，同样位于第一。</p>
@@ -266,7 +278,6 @@
             <p class="diagram">每次<span style="color:rgb(118, 137, 232)">降雨量的尖峰</span>都将导致当日消费总额的明显下降，如10月31日、11月下旬、1月13日等；<span style="color:rgb(199, 118, 232)">校园网日均活跃人数</span>和当日消费总额有着极强的正比例相关，两者增幅的波动呈现出完全一致的特征，这也是情理之中的结果。</p>
             <img src="imgs/plot/3canDetail.png" style="width:70%;margin-left:15%;margin-right15%;margin-top:30px;box-shadow:3px 3px 6px rgba(20,20,20,0.3);border-radius:5px;">
         </div>
-
         <div id="user">
             <div class="row">
                 <div class="col-md-9 col-sm-9 col-xs-9 col-lg-9">
@@ -290,7 +301,6 @@
                 </div>
             </div>
         </div>
-
         <div id="userDetail">
             <div class="row">
                 <div class="col-md-9 col-sm-9 col-xs-9 col-lg-9">
@@ -314,31 +324,46 @@
                 </div>
             </div>
         </div>
-
         <div id="whoisme">
             <h3>WHO AM I</h3>
             <p class="diagram">利用性别、入学年份、出生年份、学位类别、最常去的食堂、就餐均匀度、总就餐次数和工作日就餐比等特征，匹配我的资料和就餐习惯，逐步缩小筛选范围并最终锁定为以下15名“嫌疑人”。</p>
-            <p class="diagram">即便只剩15个候选对象，从消费分布来看仅能排除C59334。使用Influxdb结合Grafana进行时间序列数据可视化后，最终分析并确定逆解析结果为！</p>
+            <p class="diagram">即便只剩15个候选对象，从消费分布来看仍不能确定哪一个是我。使用<a href="http://influxdb.com/">Influxdb</a>结合<a href="http://grafana.org/">Grafana</a>进行时间序列数据可视化后，最终分析并确定逆解析结果为C56309！</p>
             <div class="row" style="margin-top:30px;">
                 <div class="col-md-6 col-sm-6 col-xs-6 col-lg-6">
                     <img src="imgs/plot/crimer.png">
                 </div>
                 <div class="col-md-6 col-sm-6 col-xs-6 col-lg-6">
-                    <img src="imgs/plot/crimer.png">
+                    <a href="http://zhanghonglun.cn/emc/grafana"><img src="imgs/plot/grafana.png"></a>
                 </div>
             </div>
         </div>
-
         <div id="about">
+            <h3 style="margin-bottom:30px;">工作总结</h3>
             <div class="row">
-                <div class="col-md-5 col-sm-5 col-xs-5 col-lg-5">
+                <div class="col-md-6 col-sm-6 col-xs-6 col-lg-6" style="text-align:left;">
+                    <p class="diagram">对用户出生年份分布、商户系统结构、历史降雨量、校园网日均活跃用户数进行统计分析；</p>
+                    <p class="diagram">从商户角度计算各项Top Five，统计十大消费类别的消费总额、次数和均值针对不同性别和学位用户的分布；</p>
+                    <p class="diagram">以三餐一楼为例，给出有雨和无雨天气的二维交易密度图，讨论消费总额和降雨量以及在校活跃人数的关系；</p>
+                </div>
+                <div class="col-md-6 col-sm-6 col-xs-6 col-lg-6" style="text-align:left;">
+                    <p class="diagram">从用户角度分析不同性别和学位用户对应的消费习惯，统计他们在十大消费类别上的人均总额和次数；</p>
+                    <p class="diagram">以“就餐”分类为例分析用户的消费模式，从横向和纵向两个角度识别不同的用户就餐模式；</p>
+                    <p class="diagram">基于以上用户消费模式特征，结合Influxdb和Grafana进行时间序列数据分析，从全集中识别出我的个人数据。</p>
+                </div>
+            </div>
+            <div class="row" style="margin-top:30px;">
+                <div class="col-md-3 col-sm-3 col-xs-3 col-lg-3">
+                </div>
+                <div class="col-md-3 col-sm-3 col-xs-3 col-lg-3">
                     <img src="imgs/logo.png" alt="">
                 </div>
-                <div class="col-md-7 col-sm-7 col-xs-7 col-lg-7" style="text-align:left;">
+                <div class="col-md-5 col-sm-5 col-xs-5 col-lg-5" style="text-align:left;margin-left:50px;">
                     <h3>张宏伦</h3>
                     <h5><span class="glyphicon glyphicon-envelope" style="margin-right:12px;"></span>zhanghonglun@sjtu.edu.cn</h5>
                     <h5><span class="glyphicon glyphicon-user" style="margin-right:12px;"></span>上海交通大学在读博士生</h5>
                     <p>在路上，一直前行</p>
+                </div>
+                <div class="col-md-1 col-sm-1 col-xs-1 col-lg-1">
                 </div>
             </div>
         </div>
