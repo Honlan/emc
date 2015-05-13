@@ -21,6 +21,7 @@
     </script>
     <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="css/index.css">
+    <link rel="shortcut icon" href="imgs/logo.png">
 </head>
 
 <body class="body">
@@ -47,7 +48,6 @@
                 </ul>
                 <ul class="nav navbar-nav navbar-right">
                     <li><a href="http://zhanghonglun.cn/emc/grafana">Grafana</a></li>
-                    <li><a href="">Echarts</a></li>
                 </ul>
             </div>
             <!-- /.navbar-collapse -->
@@ -101,9 +101,6 @@
                     </div>
                 </div>
             </div>
-        </div>
-        <div id="map">
-            <p>aaaa</p>
         </div>
         <div id="merchant">
             <div class="row" style="margin-bottom:30px;">
@@ -265,16 +262,19 @@
         <div id="merchantDetail">
             <h3>业绩冠军：三餐一楼（闵行第三餐饮学生餐厅）</h3>
             <p class="diagram">新闵行第三餐饮学生餐厅完成装修后于2014年9月2日重新投入营业。在观测时间范围内，营业额为3793804元，在各子商户中排名第一；消费人次达626013次，同样位于第一。</p>
-            <p class="diagram">以下给出10月28日和10月31日三餐一楼消费记录的二维密度图，分别作为无雨天气和有雨天气的食堂就餐行为示例，并结合校园网数据和气象数据进一步分析影响就餐人数的可能因素。</p>
+            <p class="diagram">以下给出11月18日和11月25日三餐一楼消费记录的二维密度图和散点图，分别作为<span style="color:rgb(232, 85, 85);">无雨天气</span>和<span style="color:rgb(85, 98, 232);">有雨天气</span>的食堂就餐行为示例，并结合校园网数据和气象数据进一步分析影响就餐人数的可能因素。</p>
+            <p class="diagram">晴天学生就餐时间更为集中，而雨天就餐时间则相对分散。从密度图和散点图都可以看出学生就餐时间和金额的分布，从散点图还可以看出不同学位学生就餐时间的差异。</p>
             <div class="row" style="margin-top: 30px;">
                 <div class="col-md-6 col-xs-6 col-sm-6 col-lg-6">
-                    <img src="imgs/plot/withRain.png">
+                    <img src="imgs/plot/withRain.png" style="margin-bottom:30px;">
+                    <img src="imgs/plot/withRainPoint.png">
                 </div>
                 <div class="col-md-6 col-xs-6 col-sm-6 col-lg-6">
-                    <img src="imgs/plot/withoutRain.png">
+                    <img src="imgs/plot/withoutRain.png" style="margin-bottom:30px;">
+                    <img src="imgs/plot/withoutRainPoint.png">
                 </div>
             </div>
-            <p style="margin-top:30px;" class="diagram">三餐一楼每日消费总额和降雨量、每日校园网活跃人数的关系。黑色点线代表日消费总额，绿线代表每日校园网活跃人数，蓝线代表日均降雨量。可以看出，三餐一楼日消费总额呈现明显的<span style="color:rgb(232, 118, 118)">周期效应</span>：工作日就餐量增加，周末就餐量陡降，并且在<span style="color:rgb(232, 118, 118)">节假日</span>显著降低，如9月开学季、国庆节、元旦节和寒假。除此之外，紫色的回归线也暗示了在线人数的变化趋势。</p>
+            <p style="margin-top:30px;" class="diagram">以下分析三餐一楼每日消费总额和降雨量、每日校园网活跃人数的关系。黑色点线代表日消费总额，绿线代表每日校园网活跃人数，蓝线代表日均降雨量。可以看出，三餐一楼日消费总额呈现明显的<span style="color:rgb(232, 118, 118)">周期效应</span>：工作日就餐量增加，周末就餐量陡降，并且在<span style="color:rgb(232, 118, 118)">节假日</span>显著降低，如9月开学季、国庆节、元旦节和寒假。除此之外，紫色的回归线也暗示了在线人数的变化趋势。</p>
             <p class="diagram">每次<span style="color:rgb(118, 137, 232)">降雨量的尖峰</span>都将导致当日消费总额的明显下降，如10月31日、11月下旬、1月13日等；<span style="color:rgb(199, 118, 232)">校园网日均活跃人数</span>和当日消费总额有着极强的正比例相关，两者增幅的波动呈现出完全一致的特征，这也是情理之中的结果。</p>
             <img src="imgs/plot/3canDetail.png" style="width:70%;margin-left:15%;margin-right15%;margin-top:30px;box-shadow:3px 3px 6px rgba(20,20,20,0.3);border-radius:5px;">
         </div>
@@ -327,7 +327,7 @@
         <div id="whoisme">
             <h3>WHO AM I</h3>
             <p class="diagram">利用性别、入学年份、出生年份、学位类别、最常去的食堂、就餐均匀度、总就餐次数和工作日就餐比等特征，匹配我的资料和就餐习惯，逐步缩小筛选范围并最终锁定为以下15名“嫌疑人”。</p>
-            <p class="diagram">即便只剩15个候选对象，从消费分布来看仍不能确定哪一个是我。使用<a href="http://influxdb.com/">Influxdb</a>结合<a href="http://grafana.org/">Grafana</a>进行时间序列数据可视化后，最终分析并确定逆解析结果为C56309！</p>
+            <p class="diagram">即便只剩15个候选对象，从消费分布来看仍不能确定哪一个是我。使用<a href="http://influxdb.com/">Influxdb</a>结合<a href="http://grafana.org/">Grafana</a>进行时间序列数据可视化后，最终分析并确定逆解析结果为<span style="color:rgb(232, 85, 85)">C56309</span>！</p>
             <div class="row" style="margin-top:30px;">
                 <div class="col-md-6 col-sm-6 col-xs-6 col-lg-6">
                     <img src="imgs/plot/crimer.png">
