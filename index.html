@@ -17,6 +17,11 @@
                 scrollTop: $('#' + $(this).attr('name')).offset().top - 60
             }, 600);
         });
+        $('img').click(function(){
+            if($(this).attr('id') != "grafanaImg"){
+                window.open($(this).attr("src"),"toolbar=no,scrollbars=no,menubar=no");
+            }
+        });
     });
     </script>
     <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
@@ -333,7 +338,7 @@
                     <img src="imgs/plot/crimer.png">
                 </div>
                 <div class="col-md-6 col-sm-6 col-xs-6 col-lg-6">
-                    <a href="http://zhanghonglun.cn/emcgrafana"><img src="imgs/plot/Grafana.png"></a>
+                    <a href="http://zhanghonglun.cn/emcgrafana"><img id="grafanaImg" src="imgs/plot/Grafana.png"></a>
                 </div>
             </div>
         </div>
